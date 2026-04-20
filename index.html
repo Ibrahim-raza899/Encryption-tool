@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web-Based Text Encryption Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Text Encryption Tool</h1>
+    <p class="subtitle">Encrypt, decrypt, and hash text in your browser.</p>
+
+    <label for="plainText">Input text</label>
+    <textarea id="plainText" rows="6" placeholder="Enter text..."></textarea>
+
+    <label for="algorithm">Encryption method</label>
+    <select id="algorithm">
+      <option value="">Select an algorithm</option>
+      <option value="caesar">Caesar Cipher</option>
+      <option value="base64">Base64</option>
+      <option value="aes">AES-GCM</option>
+      <option value="sha256">SHA-256 (Hash)</option>
+    </select>
+
+    <div id="keyGroup" class="hidden">
+      <label for="secretKey">Secret key / passphrase (AES only)</label>
+      <input id="secretKey" type="password" placeholder="Enter passphrase" />
+    </div>
+
+    <div class="actions">
+      <button id="encryptBtn" type="button">Encrypt</button>
+      <button id="decryptBtn" type="button">Decrypt</button>
+      <button id="copyBtn" type="button">Copy Output</button>
+    </div>
+
+    <label for="cipherText">Output</label>
+    <textarea id="cipherText" rows="6" readonly placeholder="Result appears here..."></textarea>
+
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
