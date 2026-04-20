@@ -37,7 +37,7 @@ This project is a single-page web app that encrypts, decrypts, and hashes text d
 ## How to run
 
 1. Clone/download the repository.
-2. Open `/home/runner/work/Encryption-tool/Encryption-tool/index.html` in a modern browser.
+2. Open `index.html` in a modern browser.
 3. Enter text, choose an algorithm, and click **Encrypt** (or **Decrypt** when supported).
 
 No backend server is required.

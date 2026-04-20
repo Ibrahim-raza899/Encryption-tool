@@ -64,10 +64,7 @@ function caesarDecrypt(text, shift = 3) {
 
 function utf8ToBase64(text) {
   const bytes = new TextEncoder().encode(text);
-  let binary = '';
-  bytes.forEach((byte) => {
-    binary += String.fromCharCode(byte);
-  });
+  const binary = Array.from(bytes, (byte) => String.fromCharCode(byte)).join('');
   return btoa(binary);
 }
 
@@ -78,10 +75,7 @@ function base64ToUtf8(encoded) {
 }
 
 function bytesToBase64(bytes) {
-  let binary = '';
-  bytes.forEach((byte) => {
-    binary += String.fromCharCode(byte);
-  });
+  const binary = Array.from(bytes, (byte) => String.fromCharCode(byte)).join('');
   return btoa(binary);
 }
 
