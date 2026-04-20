@@ -102,7 +102,8 @@ async function aesEncrypt(text, passphrase) {
 async function aesDecrypt(payload, passphrase) {
   const [ivB64, cipherB64] = payload.split(':');
   if (!ivB64 || !cipherB64) {
-    throw new Error('Invalid AES payload format. Expected iv:ciphertext.');
+    const preview = payload.length > 24 ? `${payload.slice(0, 24)}...` : payload;
+    throw new Error(`Invalid AES payload format. Expected iv:ciphertext but received: "${preview || '[empty]'}".`);
   }
 
   const key = await importAesKey(passphrase);
